@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Buat Akun</title>
+
+    <!-- Style untuk form -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .loginbox {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      .loginbox h2 {
+        margin-bottom: 20px;
+      }
+
+      .loginbox input[type="text"],
+      .loginbox input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .password-wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+
+      .password-wrapper input[type="checkbox"] {
+        margin-right: 6px;
+      }
+
+      .loginbox button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      .loginbox button:hover {
+        background-color: #45a049;
+      }
+
+      .login-link {
+        display: block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #4caf50;
+        font-size: 14px;
+      }
+
+      .login-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Form untuk membuat akun -->
+    <div class="loginbox">
+      <h2>Buat Akun</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" required />
+        <input type="text" placeholder="Email" required />
+        <input type="password" placeholder="Kata Sandi" required />
+
+        <div class="password-wrapper">
+          <input type="checkbox" id="show-password" />
+          <label for="show-password">Tampilkan Kata Sandi</label>
+        </div>
+
+        <button type="submit">Buat Akun</button>
+      </form>
+
+      <!-- Hyperlink ke Form Login -->
+      <a href="index.html" class="login-link">
+        Sudah punya akun? Login di sini
+      </a>
+    </div>
+
+    <script>
+      const showpasswordcheckbox = document.getElementById("show-password");
+      const passwordinput = document.querySelector('input[type="password"]');
+
+      showpasswordcheckbox.addEventListener("change", function () {
+        if (this.checked) {
+          passwordinput.type = "text";
+        } else {
+          passwordinput.type = "password";
+        }
+      });
+    </script>
+  </body>
+</html>
